@@ -1,6 +1,6 @@
 ---
 title: "Final Project: [YOUR TITLE HERE]"
-author: "[YOUR NAMES]"
+author: "Riya Belani"
 date: "2025-06-26"
 params:
   number: 6
