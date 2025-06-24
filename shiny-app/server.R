@@ -13,7 +13,7 @@ shinyServer(function(input, output) {
   })
   
   output$graph2 <- renderPlot({
-    ggplot(data_clean(), aes(x = age_group, y = usage_mins)) +
+    ggplot(data_clean, aes(x = age_group, y = usage_mins)) +
       geom_boxplot(fill = "green") +
       labs(
         title = "Usage Time by Age Group",

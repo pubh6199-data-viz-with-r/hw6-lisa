@@ -5,7 +5,7 @@ library(stringr)
 library(dplyr)
 
 # Load the data
-data <- readr::read_csv("/cloud/project/shiny-app/app-data/train.csv")
+data <- readr::read_csv("app-data/train.csv")
 
 #Clean data by fixing mismatch in rows
 data_clean <- data %>%
@@ -40,7 +40,6 @@ data_clean <- data_clean %>%
 #Create bins for age
 data_clean <- data_clean %>%
   mutate(age_group = cut(age, breaks = seq(10, 60, by = 5), include.lowest = TRUE))
-unique(data_clean$age_group)
 
 
 #Standardize Media and Emotion Data
