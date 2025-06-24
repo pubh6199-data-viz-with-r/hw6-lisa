@@ -1,6 +1,6 @@
 ---
-title: "Final Project: [YOUR TITLE HERE]"
-author: "Riya Belani"
+title: "Final Project: Exploration of Social Media Use"
+author: "Riya Belani and Moyalo Ifebajo"
 date: "2025-06-26"
 params:
   number: 6
@@ -39,6 +39,11 @@ knitr::opts_chunk$set(
 
 _Briefly introduce your topic and research question._
 
+Research Questions
+1. 
+2. 
+3. 
+
 ## Data
 
 _Describe your data source(s), including where it came from, the key variables, and any pre-processing steps._
@@ -52,31 +57,7 @@ data <- read_csv("data/my_data.csv")
 glimpse(data)
 ```   
 
-## Visualizatiob 1: [Title Here]
-
-_Describe what this plot shows, and why it's important._
-
-```{r}
-# your code here
-```
-
-## Visualization 2: [Title Here]
-
-_Describe what this plot shows, and why it's important._
-
-```{r}
-# your code here
-```
-
-## Visualization 3: [Title Here]
-
-_Describe what this plot shows, and why it's important._
-
-```{r}
-# your code here
-```
-
-## OR Shiny app: [Title Here]
+## Shiny app: [Title Here]
 
 _If you choose to create a Shiny app, describe the app's purpose and functionality. Save your code inside the shiny-app/ folder, replace the URL below with your app's URL_
 
@@ -98,7 +79,8 @@ _Wrap up your project with a takeaway message or next steps._
 
 _Include any references to data sources, packages, or literature you used. If your visualization design is inspired by someone else's work, cite those too._
 
-1. Reference 1
-2. Reference 2
-3. Reference 3
+1. ChatGPT 4.0 Version for Troubleshooting
+2. Shiny Assistant for UI ideas
+3. Kaggle Data Set
+
 

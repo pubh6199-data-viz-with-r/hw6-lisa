@@ -36,3 +36,29 @@ data_clean <- data_clean %>%
     messages_daily = Messages_Sent_Per_Day,
     emotion = Dominant_Emotion
   )
+
+#Create bins for age
+data_clean <- data_clean %>%
+  mutate(age_group = cut(age, breaks = seq(10, 60, by = 5), include.lowest = TRUE))
+unique(data_clean$age_group)
+
+
+#Standardize Media and Emotion Data
+data_counts <- data_clean %>%
+  group_by(platform, emotion) %>%
+  summarise(Count = n(), .groups = "drop")
+
+platform_totals <- data_counts %>%
+  group_by(platform) %>%
+  summarise(Total = sum(Count), .groups = "drop")
+
+data_standardized <- data_counts %>%
+  left_join(platform_totals, by = "platform") %>%
+  mutate(
+    Ratio = Count / Total,
+    hover_text = paste0(
+      "Platform: ", platform, "<br>",
+      "Emotion: ", emotion, "<br>",
+      "Ratio: ", round(Ratio, 3))
+  ) %>%
+  filter(!is.na(Ratio))

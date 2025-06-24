@@ -1,13 +1,13 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/2V1dzZDL)
-# Final Project: [Insert Project Title]
+# Final Project: Team Lisa's Exploration of Social Media Use
 
-Authors: [Your Full Name]  
+Authors: Riya Belani and Moyalo Ifebajo
 Course: PUBH 6199 – Visualizing Data with R  
-Date: [Insert Date]
+Date: 6/26/2025
 
 ## 🔍 Project Overview
 
-[Write 2–3 sentences about your topic and what your project aims to explore or visualize.]
+This interactive dashboard explores the Social Media Usage and Emotional Well-Being Kaggle data set through three visualizations. The visualizations aim to explore different social media usages such as likes, posts, messages, and amount of time spent againt gender and age as well as how different platforms may elicit different emotions.
 
 ## 📊 Final Write-up
 
@@ -25,8 +25,10 @@ The final write-up, including code and interpretation of the visualizations, is 
 ├── .Rproj               # RStudio project file
 ├── index.qmd            # Main Quarto file for final write-up
 ├── scratch/             # Scratch files for exploratory analysis         
-├── shiny-app/           # Shiny app folder (if used)
-│   ├── app.R
+├── shiny-app/           # Shiny app folder 
+│   ├── global.R
+│   ├── ui.R
+|   ├── server.R  
 |   ├── www/             # Static files for Shiny app (CSS, JS, images)
 │   └── app-data/        # Data files for Shiny app
 ├── docs/                # Rendered site (auto-generated)

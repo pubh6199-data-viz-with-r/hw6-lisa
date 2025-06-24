@@ -49,7 +49,7 @@ shinyUI(
                height = 450,
                card_header("Graph 1"),
                card_body(
-                 plotlyOutput("scatter_plot", height = "350px")
+                 plotlyOutput("graph1", height = "350px")
                )
              )
       ),
@@ -58,7 +58,7 @@ shinyUI(
                height = 450,
                card_header("Graph 2"),
                card_body(
-                 plotlyOutput("line_plot", height = "350px")
+                 plotlyOutput("graph2")
                )
              )
       ),
@@ -67,7 +67,7 @@ shinyUI(
                height = 450,
                card_header("Graph 3"),
                card_body(
-                 plotlyOutput("bar_plot", height = "350px")
+                 plotlyOutput("graph3")
                )
              )
       )
