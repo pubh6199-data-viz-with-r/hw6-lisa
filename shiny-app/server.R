@@ -7,13 +7,37 @@ library(plotly)
 library(viridis)
 
 shinyServer(function(input, output) {
+  
+  output$checkbox <- renderUI({
+    req(input$select)
+    choice <- data_clean %>%
+      filter(category %in% input$select) %>%
+      pull(platform) %>%
+      unique()
+    checkboxGroupInput("checkbox", "Select A Social Media Platform:",
+                       choices = choice, 
+                       selected = choice)
+  })
 
+  filtered_data <- reactive({
+    req(input$selected_platforms)
+    data_clean %>%
+      filter(platform %in% input$selected_platforms)
+  })
+  
+  filtered_standardized <- reactive({
+    req(input$selected_platforms)
+    data_standardized %>%
+      filter(platform %in% input$selected_platforms)
+  })
+  
   output$graph1 <- renderPlot({
     
   })
   
   output$graph2 <- renderPlot({
-    ggplot(data_clean, aes(x = age_group, y = usage_mins)) +
+    req(filtered_data())
+    ggplot(filtered_data(), aes(x = age_group, y = usage_mins)) +
       geom_boxplot(fill = "green") +
       labs(
         title = "Usage Time by Age Group",
@@ -24,9 +48,8 @@ shinyServer(function(input, output) {
   })
   
   output$graph3 <- renderPlotly({
-    req(data_standardized)
-    
-    p <- ggplot(data_standardized, aes(
+    req(filtered_standardized())
+    p <- ggplot(filtered_standardized(), aes(
       x = emotion,
       y = platform,
       fill = Ratio,

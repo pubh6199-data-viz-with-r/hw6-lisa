@@ -15,27 +15,14 @@ shinyUI(
     titlePanel("Exploring Social Media Use"),
     
     card(
-      card_header("Customize Your Graphs"),
+      card_header("Choose The Social Media Platforms You Want To View"),
       card_body(
-        fluidRow(
-          column(4,
-                 selectInput("color_theme", "Color Theme:",
-                             choices = list(
-                               "Pastel Dream" = "pastel",
-                               "Sunset Vibes" = "sunset",
-                               "Ocean Breeze" = "ocean"
-                             ),
-                             selected = "pastel"
-                 )
-          ),
-          column(4,
-                 sliderInput("point_size", "Point Size",
-                             min = 3, max = 15, value = 8, step = 1
-                 )
-          ),
-          column(4,
-                 checkboxInput("show_grid", "Show Grid Lines", value = TRUE)
-          )
+        checkboxGroupInput(
+          inputId = "selected_platforms",
+          label = "Select Social Media Platforms:",
+          choices = unique(data_clean$platform),
+          selected = unique(data_clean$platform),
+          inline = TRUE,
         )
       )
     ),
@@ -75,7 +62,7 @@ shinyUI(
     
     br(),
     
-    # Fun footer
+    # Footer
     card(
       card_body(
         div(
