@@ -3921,12 +3921,16 @@ vertical-align: -.125em;
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p><em>Briefly introduce your topic and research question.</em></p>
-<p>Research Questions 1. 2. 3.</p>
+<p>Social media is an ever-growing force in our society. How people use these platforms and what platforms they are using are important metrics to understand who and how we are communicating with one another. This project aims to explore the landscape of social media use by age, gender, platform, dominant emotions, and different usage metrics. The goal for the project is to create an interactive dashboard with three graphs exploring the interactions between the different social media variables, demographic variables, and usage variables to answer the research questions posed:</p>
+<ol type="1">
+<li>How do different social media metrics, such as posts made per day, differ between genders and platforms?</li>
+<li>How does daily usage of social media differ between age groups and platforms?</li>
+<li>What are the dominant emotions felt across the platforms, and how do these emotions compare between platforms?</li>
+</ol>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p><em>Describe your data source(s), including where it came from, the key variables, and any pre-processing steps.</em></p>
+<p>The data is sourced from Kaggle and was researched and prepared by AI Inventor Emirhan Bulut. This data was not recorded longitudinally and looks at single responses for 1000 participants. Each participant responded with their age, gender, the platform they use, their daily usage minutes, the number of posts they make daily, the number of likes they receive daily, the number of comments they receive daily, the number of messages sent, and the dominant emotion they felt. The age range for the dataset is 20 to 35. The platform choices were: Instagram, Snapchat, Telegram, LinkedIn, Facebook, Twitter, and WhatsApp. The emotion choices were: Anger, Anxiety, Boredom, Happiness, Neutral, and Sadness. To process the data set from Kaggle, the train file was used, which contained all 1000 responses. There was an error with the age and gender columns where data was swapped between the two columns between rows 200 and 300, as well as rows 700 and 800, which was cleaned in the global.R file.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -3940,29 +3944,42 @@ vertical-align: -.125em;
 </section>
 <section id="shiny-app-exploring-social-media-use" class="level2">
 <h2 class="anchored" data-anchor-id="shiny-app-exploring-social-media-use">Shiny app: Exploring Social Media Use</h2>
-<p><em>If you choose to create a Shiny app, describe the app’s purpose and functionality. Save your code inside the shiny-app/ folder, replace the URL below with your app’s URL</em></p>
+<p>The app’s purpose is to answer the three research questions through three interactive graphs that the user can modify based on which variables they are most interested in viewing. The first graph explores how different social media usage metrics, which the user can select, versus gender to see how different genders interact with social media differently and how these interactions differ between platforms. The second graph explores how different age groups use social media daily, and users can group the ages, which range from 20 - 35, in different-sized bins as well as explore the usage data across the different platforms. The third graph explores what emotions are most dominant across platforms and how these emotions compare between platforms. Users are able to see the calculated ratio based on the number of people who reported an emotion while using a platform over the total number of people who reported using that platform.</p>
 <p><a href="https://8rjtwv-riya-belani.shinyapps.io/shiny-app/">Click here to open the interactive Shiny app</a></p>
 </section>
 <section id="interpretation" class="level2">
 <h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
-<p><em>Summarize your key findings. What do your visualizations reveal?</em></p>
+<p>Graph 1: A key takeaway from graph 1 is that across the four metrics, Instagram shows the highest mean values, and when looking at gender, nonbinary Instagram users have the highest mean reported values for posts made, messages sent, likes received, and comments received.</p>
+<p>Graph 2: A key takeaway from graph two is that certain social media platforms skew towards older generations, and certain social media platforms skew towards younger generations. Specifically looking at Snapchat and Telegram, there are gaps in the higher age data bins for the older end of the data range for Snapchat and for Telegram, the opposite is seen with gaps being shown at the younger end of the data range.</p>
+<p>Graph 3: A key takeaway from graph three that was unexpected was Instagram reporting the highest ratio for the dominant emotion being happy, and happy being the most reported emotion for Instagram users. Based on cultural knowledge of the app, it was expected that more negative emotions would be reported due to the potential unrealistic expectations that are portrayed on the app</p>
 </section>
 <section id="limitations" class="level2">
 <h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
-<p><em>Discuss any data quality or design limitations.</em></p>
+<p>There were some limitations with the way the dataset was recorded that constricted the visualizations that could be made. There was no longitudinal data, so no graphs exploring usage over time could be made. Likewise, there was no geographical data, so no maps of usage could be made as well. Furthermore, because each participant reported only one platform and therefore all of the metric data was based on one platform, it led to gaps in certain data analysis such as the one done for the heatmap as there were several blank spaces where there was no reported data, such as anger as the dominant emotion for Snapchat.</p>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p><em>Wrap up your project with a takeaway message or next steps.</em></p>
+<p>Overall, this project is a first look into the ways that social media use differentiates between age, gender, and the various platforms, as well as it begins to explore some of the outcomes of this usage through analyzing the dominant emotions reported for using each platform. An interesting next step in exploring these variables could be looking into whether time spent on each social media platform is a confounding variable for studying the dominant emotion felt while using a platform. Resurveying people in a manner where they have to give their usage, likes, posts, messages, comments, and emotions for each social media platform, as this would lead to no gaps for the heat map and having a more robust dataset. Widening the age range surveyed and adding other popular social media platforms like TikTok would also be an interesting next step. Likewise, asking people who are surveyed where they are located geographically could add a location variable to allow for maps to be generated showing what platforms are most popular in what regions. Finally, if the usage data were able to be recorded over time, it would be interesting to see how it changes over months, years, or even generations.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p><em>Include any references to data sources, packages, or literature you used. If your visualization design is inspired by someone else’s work, cite those too.</em></p>
 <ol type="1">
-<li>ChatGPT 4.0 Version for Troubleshooting</li>
-<li>Shiny Assistant for UI ideas</li>
-<li>Kaggle Data Set</li>
-<li>Packages:</li>
+<li>ChatGPT 4.0 Version for Troubleshooting: https://chatgpt.com/</li>
+<li>Shiny Assistant for UI ideas: https://gallery.shinyapps.io/assistant/</li>
+<li>Kaggle Data Set: https://www.kaggle.com/datasets/emirhanai/social-media-usage-and-emotional-well-being/data</li>
+<li>Packages:
+<ol type="a">
+<li>tidyverse: https://www.tidyverse.org/</li>
+<li>ggplot2: https://ggplot2.tidyverse.org/</li>
+<li>quarto: https://quarto.org/</li>
+<li>shiny: https://shiny.posit.co/</li>
+<li>dplyr: https://dplyr.tidyverse.org/</li>
+<li>plotly: https://plotly.com/</li>
+<li>viridis:https://cran.r-project.org/web/packages/viridis/</li>
+<li>bslib: https://rstudio.github.io/bslib/</li>
+<li>shinyWidgets: https://github.com/dreamRs/shinyWidgets/</li>
+<li>stringr: https://stringr.tidyverse.org/</li>
+</ol></li>
 </ol>
 
 
