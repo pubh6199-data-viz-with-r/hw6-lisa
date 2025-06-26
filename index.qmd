@@ -61,7 +61,7 @@ glimpse(data)
 
 _If you choose to create a Shiny app, describe the app's purpose and functionality. Save your code inside the shiny-app/ folder, replace the URL below with your app's URL_
 
-[Click here to open the interactive Shiny app](https://cindyhu.shinyapps.io/two-files-app/)
+[Click here to open the interactive Shiny app](https://8rjtwv-riya-belani.shinyapps.io/shiny-app/)
 
 ## Interpretation
 
@@ -82,5 +82,6 @@ _Include any references to data sources, packages, or literature you used. If yo
 1. ChatGPT 4.0 Version for Troubleshooting
 2. Shiny Assistant for UI ideas
 3. Kaggle Data Set
+4. Packages: 
 
 

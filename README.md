@@ -13,7 +13,7 @@ This interactive dashboard explores the Social Media Usage and Emotional Well-Be
 
 The final write-up, including code and interpretation of the visualizations, is available here:
 
-👉 [**View the write-up website**](https://github.com/pubh6199-data-viz-with-r/hw6-lisa)
+👉 [**View the write-up website**](https://pubh6199-data-viz-with-r.github.io/hw6-lisa/)
 
 ## 📂 Repository Structure
 
