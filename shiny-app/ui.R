@@ -36,10 +36,22 @@ shinyUI(
                height = 450,
                card_header("Graph 1"),
                card_body(
-                 plotlyOutput("graph1", height = "350px")
+                 fluidRow(
+                   column(8,
+                          selectInput(
+                            inputId = "select_variable", "Select a variable:",
+                            choices = c("Number of posts made" = "posts_daily", 
+                                        "Number of likes received" = "likes_daily", 
+                                        "Number of comments received" = "comments_daily",
+                                        "Number of messages" = "messages_daily")
+                                  ),
+                            selected = "posts_daily"
+                   )
+                 ),
+                  plotlyOutput("graph1")
                )
              )
-      ),
+            ),
       column(4,
              card(
                height = 450,
@@ -68,9 +80,9 @@ shinyUI(
         div(
           style = "text-align: center; color: #666; font-style: italic;",
           "Data Source: https://www.kaggle.com/datasets/emirhanai/social-media-usage-and-emotional-well-being"
+           )
+          )
         )
       )
     )
-  )
-)
 

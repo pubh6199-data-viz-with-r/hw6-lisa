@@ -31,18 +31,33 @@ shinyServer(function(input, output) {
       filter(platform %in% input$selected_platforms)
   })
   
-  output$graph1 <- renderPlot({
-    
+
+  mean_data <- reactive({
+    filtered_data() %>%
+      group_by(gender, platform) %>%
+      summarise(mean_value = mean(.data[[input$select_variable]], na.rm = TRUE), .groups = "drop")
   })
   
-  output$graph2 <- renderPlot({
+  output$graph1 <- renderPlotly({
+    p <- ggplot(mean_data(), aes(x = gender, y = mean_value, fill = platform)) +
+      geom_bar(stat = "identity", position = "stack") +
+      labs(
+        y = paste("Average Value by", input$select_variable),
+        x = "Gender",
+        fill = "Platform"
+      ) +
+      theme_minimal()
+    
+    ggplotly(p)
+  })
+
+  output$graph2 <- renderPlotly({
     req(filtered_data())
-    ggplot(filtered_data(), aes(x = age_group, y = usage_mins)) +
+    ggplot(filtered_data(), aes(x = age, y = usage_mins)) +
       geom_boxplot(fill = "green") +
       labs(
-        title = "Usage Time by Age Group",
         x = "Age Group",
-        y = "Usage (minutes)"
+        y = "Usage(minutes)"
       ) +
       theme_minimal()
   })
