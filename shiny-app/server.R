@@ -45,21 +45,25 @@ shinyServer(function(input, output) {
         y = paste("Average Value by", input$select_variable),
         x = "Gender",
         fill = "Platform"
-      ) +
+      ) + scale_fill_viridis_d() + 
       theme_minimal()
     
     ggplotly(p)
   })
 
   output$graph2 <- renderPlotly({
-    req(filtered_data())
-    ggplot(filtered_data(), aes(x = age, y = usage_mins)) +
-      geom_boxplot(fill = "green") +
+    p <- ggplot(filtered_data(),
+      aes(x = age_group, y = usage_mins, fill = platform)) +
+      stat_summary(fun = mean, geom = "col", position = "dodge") +
       labs(
         x = "Age Group",
-        y = "Usage(minutes)"
-      ) +
+        y = "Average Daily Usage (minutes)",
+        fill = "Platform"
+      ) + scale_fill_viridis_d() + 
       theme_minimal()
+    
+    ggplotly(p) %>%
+      style(hoverinfo = "text")
   })
   
   output$graph3 <- renderPlotly({

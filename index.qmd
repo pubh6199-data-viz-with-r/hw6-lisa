@@ -53,11 +53,11 @@ _Describe your data source(s), including where it came from, the key variables, 
 # Load libraries and data
 library(tidyverse)
 
-data <- read_csv("data/my_data.csv")
+data <- read_csv("app-data/train.csv")
 glimpse(data)
 ```   
 
-## Shiny app: [Title Here]
+## Shiny app: Exploring Social Media Use
 
 _If you choose to create a Shiny app, describe the app's purpose and functionality. Save your code inside the shiny-app/ folder, replace the URL below with your app's URL_
 

@@ -18,14 +18,14 @@
     "href": "index.html#data",
     "title": "Final Project: Exploration of Social Media Use",
     "section": "Data",
-    "text": "Data\nDescribe your data source(s), including where it came from, the key variables, and any pre-processing steps.\n\n\nCode\n# Load libraries and data\nlibrary(tidyverse)\n\ndata &lt;- read_csv(\"data/my_data.csv\")\nglimpse(data)"
+    "text": "Data\nDescribe your data source(s), including where it came from, the key variables, and any pre-processing steps.\n\n\nCode\n# Load libraries and data\nlibrary(tidyverse)\n\ndata &lt;- read_csv(\"app-data/train.csv\")\nglimpse(data)"
   },
   {
-    "objectID": "index.html#shiny-app-title-here",
-    "href": "index.html#shiny-app-title-here",
+    "objectID": "index.html#shiny-app-exploring-social-media-use",
+    "href": "index.html#shiny-app-exploring-social-media-use",
     "title": "Final Project: Exploration of Social Media Use",
-    "section": "Shiny app: [Title Here]",
-    "text": "Shiny app: [Title Here]\nIf you choose to create a Shiny app, describe the app’s purpose and functionality. Save your code inside the shiny-app/ folder, replace the URL below with your app’s URL\nClick here to open the interactive Shiny app"
+    "section": "Shiny app: Exploring Social Media Use",
+    "text": "Shiny app: Exploring Social Media Use\nIf you choose to create a Shiny app, describe the app’s purpose and functionality. Save your code inside the shiny-app/ folder, replace the URL below with your app’s URL\nClick here to open the interactive Shiny app"
   },
   {
     "objectID": "index.html#interpretation",

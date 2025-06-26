@@ -48,12 +48,9 @@ The final write-up, including code and interpretation of the visualizations, is 
 ```r
 shiny::runApp("shiny-app")
 ```
-
-> ⚠️ Make sure any necessary data files are in `shiny-app/app-data/`.
+ `shiny-app/app-data/`.
 
 ## 🔗 Shiny App Link
-
-If your project includes a Shiny app, you can access it here:
 
 👉 [https://yourusername.shinyapps.io/your-app-name](https://yourusername.shinyapps.io/your-app-name)
 
@@ -62,7 +59,13 @@ If your project includes a Shiny app, you can access it here:
 - `tidyverse`
 - `ggplot2`
 - `quarto`
-- `shiny` (if applicable)
+- `shiny`
+- 'dplyr'
+- 'plotly'
+- 'viridis'
+- 'bslib'
+- 'shinyWidgets'
+- 'stringr'
 
 ## ✅ To-Do or Known Issues
 

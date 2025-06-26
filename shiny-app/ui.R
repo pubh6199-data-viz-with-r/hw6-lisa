@@ -34,7 +34,7 @@ shinyUI(
       column(4,
              card(
                height = 450,
-               card_header("Graph 1"),
+               card_header("Graph 1: Average Social Media Metric by Gender"),
                card_body(
                  fluidRow(
                    column(8,
@@ -55,7 +55,7 @@ shinyUI(
       column(4,
              card(
                height = 450,
-               card_header("Graph 2"),
+               card_header("Graph 2: Average Daily Usage by Age Group"),
                card_body(
                  plotlyOutput("graph2")
                )
@@ -64,7 +64,7 @@ shinyUI(
       column(4,
              card(
                height = 450,
-               card_header("Graph 3"),
+               card_header("Graph 3: Emotional Response Ratios Across Platforms"),
                card_body(
                  plotlyOutput("graph3")
                )
