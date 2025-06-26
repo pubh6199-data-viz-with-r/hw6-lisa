@@ -13,7 +13,7 @@ This interactive dashboard explores the Social Media Usage and Emotional Well-Be
 
 The final write-up, including code and interpretation of the visualizations, is available here:
 
-👉 [**View the write-up website**](https://pubh6199-data-viz-with-r.github.io/hw6-YOUR-TEAM-NAME/)
+👉 [**View the write-up website**](https://github.com/pubh6199-data-viz-with-r/hw6-lisa)
 
 ## 📂 Repository Structure
 
@@ -52,7 +52,7 @@ shiny::runApp("shiny-app")
 
 ## 🔗 Shiny App Link
 
-👉 [https://yourusername.shinyapps.io/your-app-name](https://yourusername.shinyapps.io/your-app-name)
+👉 [https://8rjtwv-riya-belani.shinyapps.io/shiny-app/](https://8rjtwv-riya-belani.shinyapps.io/shiny-app/)
 
 ## 📦 Packages Used
 
@@ -60,13 +60,13 @@ shiny::runApp("shiny-app")
 - `ggplot2`
 - `quarto`
 - `shiny`
-- 'dplyr'
-- 'plotly'
-- 'viridis'
-- 'bslib'
-- 'shinyWidgets'
-- 'stringr'
+- `dplyr`
+- `plotly`
+- `viridis`
+- `bslib`
+- `shinyWidgets`
+- `stringr`
 
 ## ✅ To-Do or Known Issues
 
-[Optional section for you to note improvements or bugs.]
+Dashboard may look compacted if opened on small screens/minimized windows. 

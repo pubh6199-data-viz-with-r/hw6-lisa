@@ -37,11 +37,6 @@ data_clean <- data_clean %>%
     emotion = Dominant_Emotion
   )
 
-#Create bins for age
-data_clean <- data_clean %>%
-  mutate(age_group = cut(age, breaks = seq(10, 60, by = 5), include.lowest = TRUE))
-
-
 #Standardize Media and Emotion Data
 data_counts <- data_clean %>%
   group_by(platform, emotion) %>%

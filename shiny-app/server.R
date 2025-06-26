@@ -52,18 +52,39 @@ shinyServer(function(input, output) {
   })
 
   output$graph2 <- renderPlotly({
-    p <- ggplot(filtered_data(),
-      aes(x = age_group, y = usage_mins, fill = platform)) +
-      stat_summary(fun = mean, geom = "col", position = "dodge") +
+    req(input$age_bin_width)
+    
+    df <- filtered_data() %>%
+      filter(age >= 20 & age <= 35, !is.na(usage_mins)) %>%
+      mutate(age_group = cut(
+        age,
+        breaks = unique(c(seq(20, 35, by = input$age_bin_width), 35)),
+        include.lowest = TRUE,
+        right = FALSE
+      )) %>%
+      group_by(platform, age_group) %>%
+      summarise(mean_usage = mean(usage_mins, na.rm = TRUE), .groups = "drop") %>%
+      filter(!is.na(mean_usage))  
+    
+    p <- ggplot(df,
+                aes(x = age_group, y = mean_usage, fill = platform)) +
+      geom_col() +
+      facet_wrap(~ platform, ncol = 2, scales = "free_y") +
+      scale_fill_viridis_d(guide = "none") +
       labs(
         x = "Age Group",
-        y = "Average Daily Usage (minutes)",
-        fill = "Platform"
-      ) + scale_fill_viridis_d() + 
-      theme_minimal()
+        y = "Average Daily Usage (minutes)"
+      ) +
+      theme_minimal() +
+      theme(
+        strip.text = element_text(size = 12,),
+        axis.text.x = element_blank(),
+        legend.position = "none",
+        panel.spacing = unit(1, "lines")
+      )
     
-    ggplotly(p) %>%
-      style(hoverinfo = "text")
+    ggplotly(p, tooltip = c("x", "y")) %>%
+      layout(showlegend = FALSE)
   })
   
   output$graph3 <- renderPlotly({

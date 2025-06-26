@@ -57,9 +57,21 @@ shinyUI(
                height = 450,
                card_header("Graph 2: Average Daily Usage by Age Group"),
                card_body(
+                 fluidRow(
+                   column(12,
+                 sliderInput(
+                   inputId = "age_bin_width",
+                   label = "Select age bin size (years):",
+                   min = 1,
+                   max = 15,
+                   value = 5,
+                   step = 1,
+                 ),
                  plotlyOutput("graph2")
                )
-             )
+              )
+           )
+         )
       ),
       column(4,
              card(

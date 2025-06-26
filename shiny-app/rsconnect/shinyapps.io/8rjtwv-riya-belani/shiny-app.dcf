@@ -1,0 +1,13 @@
+name: shiny-app
+title: shiny-app
+username: 8rjtwv-riya-belani
+account: 8rjtwv-riya-belani
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14995454
+bundleId: 10523657
+url: https://8rjtwv-riya-belani.shinyapps.io/shiny-app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app.R
