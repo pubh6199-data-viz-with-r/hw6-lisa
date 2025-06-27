@@ -43,7 +43,7 @@ shinyUI(
                             choices = c("Number of posts made" = "posts_daily", 
                                         "Number of likes received" = "likes_daily", 
                                         "Number of comments received" = "comments_daily",
-                                        "Number of messages" = "messages_daily")
+                                        "Number of messages sent" = "messages_daily")
                                   ),
                             selected = "posts_daily"
                    )
